@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/black_box_cbs -n .:../src $*
+# for shared lib, use: opp_run -l ../src/black_box_cbs -n .:../src $*
