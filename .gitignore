@@ -66,3 +66,14 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+.venv
+
+# Local scenario designer
+.venv/
+var/
+web/node_modules/
+web/dist/
+__pycache__/
+.pytest_cache/
+*.pyc
