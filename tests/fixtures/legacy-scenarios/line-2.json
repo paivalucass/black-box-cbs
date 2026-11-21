@@ -295,7 +295,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "accessB",
@@ -308,7 +308,7 @@
         "port": 1
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "trunk0",
@@ -321,7 +321,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "listenerLink",
@@ -334,7 +334,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     }
   ],
   "flows": [
@@ -345,7 +345,6 @@
       "payload": 1000,
       "interval": 0.001,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 4,
       "deadline": 0.01
@@ -357,7 +356,6 @@
       "payload": 1000,
       "interval": 0.0002,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 0,
       "deadline": 0.01

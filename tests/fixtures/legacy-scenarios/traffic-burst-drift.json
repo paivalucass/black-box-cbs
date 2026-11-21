@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "name": "Branched CBS bottleneck",
+  "name": "Ethernet bursts with source clock drift",
   "nodes": [
     {
       "id": "talker",
@@ -21,6 +21,10 @@
             1,
             1
           ],
+          "class_to_queue": [
+            0,
+            1
+          ],
           "queues": [
             {
               "shaper": "sp",
@@ -37,8 +41,8 @@
           ]
         }
       ],
-      "x": 30.0,
-      "y": 50.0
+      "x": 20.0,
+      "y": 120.0
     },
     {
       "id": "background",
@@ -59,6 +63,10 @@
             1,
             1
           ],
+          "class_to_queue": [
+            0,
+            1
+          ],
           "queues": [
             {
               "shaper": "sp",
@@ -75,8 +83,8 @@
           ]
         }
       ],
-      "x": 30.0,
-      "y": 320.0
+      "x": 20.0,
+      "y": 300.0
     },
     {
       "id": "listener",
@@ -97,6 +105,10 @@
             1,
             1
           ],
+          "class_to_queue": [
+            0,
+            1
+          ],
           "queues": [
             {
               "shaper": "sp",
@@ -113,11 +125,11 @@
           ]
         }
       ],
-      "x": 650.0,
-      "y": 180.0
+      "x": 490.0,
+      "y": 170.0
     },
     {
-      "id": "swLeft",
+      "id": "sw0",
       "kind": "switch",
       "ports": [
         {
@@ -133,6 +145,10 @@
             1,
             1,
             1,
+            1
+          ],
+          "class_to_queue": [
+            0,
             1
           ],
           "queues": [
@@ -165,140 +181,8 @@
             1,
             1
           ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 220.0,
-      "y": 50.0
-    },
-    {
-      "id": "swRight",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
+          "class_to_queue": [
             0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 220.0,
-      "y": 320.0
-    },
-    {
-      "id": "swRoot",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
             1
           ],
           "queues": [
@@ -324,10 +208,16 @@
           "pcp_map": [
             0,
             0,
-            0,
-            0,
             1,
             1,
+            2,
+            2,
+            3,
+            3
+          ],
+          "class_to_queue": [
+            0,
+            0,
             1,
             1
           ],
@@ -347,67 +237,41 @@
           ]
         }
       ],
-      "x": 440.0,
-      "y": 180.0
+      "x": 220.0,
+      "y": 170.0
     }
   ],
   "links": [
     {
-      "id": "link0",
+      "id": "accessA",
       "a": {
         "node": "talker",
         "port": 0
       },
       "b": {
-        "node": "swLeft",
+        "node": "sw0",
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
-      "id": "link1",
+      "id": "accessB",
       "a": {
         "node": "background",
         "port": 0
       },
       "b": {
-        "node": "swRight",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "link2",
-      "a": {
-        "node": "swLeft",
-        "port": 1
-      },
-      "b": {
-        "node": "swRoot",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "link3",
-      "a": {
-        "node": "swRight",
-        "port": 1
-      },
-      "b": {
-        "node": "swRoot",
+        "node": "sw0",
         "port": 1
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
-      "id": "link4",
+      "id": "listenerLink",
       "a": {
-        "node": "swRoot",
+        "node": "sw0",
         "port": 2
       },
       "b": {
@@ -415,7 +279,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     }
   ],
   "flows": [
@@ -425,10 +289,13 @@
       "destination": "listener",
       "payload": 1000,
       "interval": 0.001,
-      "start": 0.0,
-      "stop": 1.0,
+      "sending_mode": "burst",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 100.0,
+      "start": 0.002,
       "vlan": 10,
-      "pcp": 4,
+      "pcp": 5,
       "deadline": 0.01
     },
     {
@@ -437,8 +304,11 @@
       "destination": "listener",
       "payload": 1000,
       "interval": 0.0002,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 0,
       "deadline": 0.01

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "name": "8-switch CBS bottleneck",
+  "name": "4-switch CBS bottleneck",
   "nodes": [
     {
       "id": "talker",
@@ -113,7 +113,7 @@
           ]
         }
       ],
-      "x": 1820.0,
+      "x": 1060.0,
       "y": 170.0
     },
     {
@@ -417,278 +417,6 @@
       ],
       "x": 790.0,
       "y": 170.0
-    },
-    {
-      "id": "sw4",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 980.0,
-      "y": 170.0
-    },
-    {
-      "id": "sw5",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 1170.0,
-      "y": 170.0
-    },
-    {
-      "id": "sw6",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 1360.0,
-      "y": 170.0
-    },
-    {
-      "id": "sw7",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 1550.0,
-      "y": 170.0
     }
   ],
   "links": [
@@ -703,7 +431,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "accessB",
@@ -716,7 +444,7 @@
         "port": 1
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "trunk0",
@@ -729,7 +457,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "trunk1",
@@ -742,7 +470,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "trunk2",
@@ -755,64 +483,12 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "trunk3",
-      "a": {
-        "node": "sw3",
-        "port": 1
-      },
-      "b": {
-        "node": "sw4",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "trunk4",
-      "a": {
-        "node": "sw4",
-        "port": 1
-      },
-      "b": {
-        "node": "sw5",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "trunk5",
-      "a": {
-        "node": "sw5",
-        "port": 1
-      },
-      "b": {
-        "node": "sw6",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "trunk6",
-      "a": {
-        "node": "sw6",
-        "port": 1
-      },
-      "b": {
-        "node": "sw7",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
       "id": "listenerLink",
       "a": {
-        "node": "sw7",
+        "node": "sw3",
         "port": 1
       },
       "b": {
@@ -820,7 +496,7 @@
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     }
   ],
   "flows": [
@@ -831,7 +507,6 @@
       "payload": 1000,
       "interval": 0.001,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 4,
       "deadline": 0.01
@@ -843,7 +518,6 @@
       "payload": 1000,
       "interval": 0.0002,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 0,
       "deadline": 0.01

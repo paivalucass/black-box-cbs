@@ -9,4 +9,4 @@ const points=computed(()=>{
 
 })
 </script>
-<template><figure><figcaption>{{label}}</figcaption><svg viewBox="0 0 760 210" role="img" :aria-label="label"><path d="M35 15V180H745" fill="none" stroke="#94a3b8"/><polyline :points="points" fill="none" stroke="#0d9488" stroke-width="2"/><text x="350" y="205" font-size="11">Time / independent variable</text></svg><p class="muted">{{samples.length}} samples · export artifacts for full numerical data</p></figure></template>
+<template><figure><figcaption>{{label}}</figcaption><svg viewBox="0 0 760 210" role="img" :aria-label="label"><path d="M35 15V180H745" fill="none" class="plot-axis"/><polyline :points="points" fill="none" class="plot-line" stroke-width="2"/><text x="350" y="205" font-size="14">Time / independent variable</text></svg><p class="muted">{{samples.length}} samples · export artifacts for full numerical data</p></figure></template>

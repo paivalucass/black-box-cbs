@@ -1,6 +1,6 @@
 # TSN scenario designer and simulation runner: implementation plan
 
-Status: initial implementation added. Vue 3 replaces React at the user’s request. The backend uses locally available Flask with Pydantic. See README.md for commands, implemented features, and verification limits. Advanced TSN profiles remain future work.
+Status: implemented with Vue 3 and Cmdenv. Compiler 3.2 now follows the supplied sample NED/INI using native INET applications, standard CBS, multicast/static routing, shared node clocks and native flow measurements. See [the current configuration contract](simulation-configuration.md) and [measurement definitions](results-pipeline.md). The original roadmap below includes later features; it does not imply support for every TSN profile.
 
 ## 1. Research purpose and initial deliverable
 
@@ -40,7 +40,7 @@ The topology canvas and results plots live in the browser. Simulation execution 
 
 ## 4. Architecture and proposed code layout
 
-Use a local Vue 3/TypeScript frontend with a graph editor such as Vue Flow, and a Python backend with Flask and Pydantic. Python keeps the scenario service accessible to future optimization and analysis code. Use SQLite for scenario revisions and job metadata, with simulation artifacts on disk. Serve locally on loopback by default.
+Use a local Vue 3/TypeScript frontend with a graph editor such as Vue Flow, and a Python backend with Flask and Pydantic. Python keeps the scenario service accessible to future optimization and analysis code. Use SQLite for named simulation models and job metadata, with simulation artifacts on disk. Serve locally on loopback by default.
 
 No cloud hosting, account system, distributed job queue, or optimizer library is needed for the first release. Select and lock dependency versions when implementation starts, against the installed Python and JavaScript runtimes.
 
@@ -89,9 +89,9 @@ Do not create all these directories as empty scaffolding. Introduce them as work
 
 ## 5. GUI workflow
 
-Use one scenario workspace with a central topology canvas, a selected-object inspector, and tabs for traffic, ports/queues, features, generated files, runs and results.
+Use a tabbed scenario workspace with a black background and readable 17px controls and labels. Keep the Experiment, Topology, Nodes & queues, Links, Traffic, Features, Generated files, Runs and Results buttons as tabs. Only the active section appears, and configuration state persists when switching tabs.
 
-1. **Create:** start empty or from single-switch, line, star, tree or bottleneck templates. Save a name and description.
+1. **Create:** start empty or from the automotive zonal, industrial production, backbone ring, leaf–spine or cascaded-bottleneck research templates. Save a name and description. See [the catalogue](research-templates.md) for their workloads and deterministic generator.
 2. **Wire:** add TSN end devices and switches; connect explicit numbered ports; edit link rate and propagation delay. Dragging a node affects layout only.
 3. **Define traffic:** add named flows between end devices; configure payload, timing, VLAN, PCP and deadlines. Highlight each flow's resolved path.
 4. **Configure ports:** edit ingress policies and egress traffic classes, capacities, schedulers and shapers. Show how each PCP maps to a queue on each traversed port.
@@ -100,7 +100,7 @@ Use one scenario workspace with a central topology canvas, a selected-object ins
 7. **Run:** configure duration, warm-up, seed and measurement profile, then launch Cmdenv. Monitor the job, cancel it, and preserve its logs.
 8. **Inspect:** view per-flow results and queue/port diagnostics; compare runs; export CSV and the full experiment bundle.
 
-Include table editing for flows and port policies, duplication of devices/flows, undo/redo for topology edits, and save/reopen. These matter more initially than elaborate graphics. A run always uses a saved immutable revision; unsaved edits cannot change a running experiment.
+Include table editing for flows and port policies, duplication of devices/flows, undo/redo for topology edits, and save/reopen. These matter more initially than elaborate graphics. Save editable simulation models by their user-entered names, independently of templates. Save updates the opened model; Save as copy creates another named model. Preserve old revisions during migration. A run freezes its own immutable snapshot, so later model edits cannot change an ongoing experiment.
 
 ## 6. Scenario data contract
 
@@ -113,10 +113,10 @@ Use stable IDs distinct from display names and NED identifiers. Store physical v
 | Port | Stable ID, persistent Ethernet index, link reference, ingress policy, egress queue/class policy, VLAN behavior. |
 | Link | ID, two explicit endpoint ports, full-duplex Ethernet rate, propagation delay. Both interface and channel rates resolve consistently. |
 | VLAN policy | Tagged endpoint or access/trunk behavior, native/untagged policy, permitted VLANs, tag preservation or removal. |
-| Flow | ID, source, destination, UDP port allocation, application payload bytes, period or approved distribution, start/stop time, VLAN, PCP, optional deadline. |
+| Flow | ID, source, destination, UDP port allocation, application payload bytes, period or approved distribution, start offset (generation continues until simulation end), VLAN, PCP, optional deadline. |
 | Egress classes | 1–8 classes, complete PCP-to-class mapping, priority order, per-class FIFO capacity and drop behavior, shaper selection. |
 | CBS policy | Per-node/per-port/per-class idleSlope, optional credit parameters, eligible-for-optimization flag, lower/upper bounds. |
-| Experiment | Warm-up, traffic stop, simulation end, seed set, repetitions, recording profile, completion horizon and measurement definition version. |
+| Experiment | Warm-up, simulation end, seed set, repetitions, recording profile, completion horizon and measurement definition version. |
 
 First support fixed-size, periodic unicast UDP flows, including phase offsets and background traffic. Then add seeded variable intervals/payloads and burst profiles. Avoid arbitrary free-text INI expressions in the normal editor; typed distribution choices are easier to validate and reproduce.
 
@@ -175,7 +175,7 @@ Generate:
 
 Use an export-specific package under `black_box_cbs.generated`, with `ned/` as the corresponding NED source root. Use explicit `ethg[index]` connections and explicit `numEthInterfaces` declarations. Stable port IDs keep their assigned indices across edits; no connection-order-dependent `ethg++` assignments. Validate the produced package tree in the actual NED loader.
 
-NED contains topology and module types; INI contains experiment parameters. Preserve canvas coordinates in the scenario JSON for reopening the web editor. Include IP/MAC setup and deterministic forwarding, not just devices and links. For the initial acyclic topologies, use validated automatic addressing and forwarding configuration; introduce explicit VLAN-aware static tables where the automatic configurator does not honor the desired policy. Reject ambiguous paths and Layer 2 cycles until explicit loop-free forwarding is supported. Ring/mesh canvas support must not enable a simulation with broadcast loops.
+NED contains topology and module types; INI contains experiment parameters. Preserve canvas coordinates in the scenario JSON for reopening the web editor. Include MAC setup and deterministic forwarding, not just devices and links. The implemented Ethernet compiler resolves VLAN-aware paths and emits static forwarding tables, including validated multicast trees. Physical rings and meshes are supported with loop-free forwarding for the configured streams; this does not enable arbitrary broadcast/control traffic on cyclic graphs.
 
 For illustration, these installed parameter locations are relevant; this fragment is not a complete generated scenario:
 
@@ -202,7 +202,7 @@ Return structured diagnostics with severity, object ID, field and remedy.
 - Reject duplicate IDs/NED names, invalid names, invalid units, occupied ports, incompatible rates and invalid interface indices.
 - Check each flow's source/destination, unique receiving socket, connectivity, VLAN-permitted path, and forwarding path. Explicitly configure deterministic neighbor resolution or startup behavior and document it.
 - Check VLAN/PCP ranges and endpoint tag support. Require valid mappings for all eight PCP values and all configured queues.
-- Require positive payload, interval, finite queue capacities for loss experiments, valid timing, and warm-up earlier than traffic stop and simulation end.
+- Require positive payload, interval, finite queue capacities for loss experiments, valid timing, and warm-up earlier than simulation end.
 - For enabled CBS, require `0 < idleSlope < portBitrate`; disable CBS explicitly instead of using zero idleSlope. Validate optimization bounds similarly.
 - Give each scenario a per-port CBS reservation budget, at most link capacity by default. Reject budget violations in the normal profile. A separate overload/stress profile can deliberately relax admission assumptions and must label the resulting experiment.
 - Estimate load after overhead and aggregate it along resolved paths and classes. Traffic exceeding its reservation or link capacity is an experimental warning, not automatically an invalid scenario. CBS does not guarantee a deadline merely because average load fits.
@@ -245,11 +245,11 @@ The browser can download logs, metrics and the exact bundle. Runs use isolated o
 
 Define metrics before building plots. Distinguish application payload goodput from Ethernet utilization, and observed latency from a theoretical worst-case bound.
 
-Use one source/sink pair per flow and record packet identity, flow ID, generation time, reception time and payload length. Prefer INET creation-time and identity tags plus source/sink signals if they preserve all required information. Add small application-owned source/measurement modules where necessary, including a controlled traffic stop time; do not invent a `stopTime` parameter on `ActivePacketSource`, which does not provide it in this version. Measurement tags must not silently increase simulated payload size.
+Use one source/sink pair per flow and record packet identity, flow ID, generation time, reception time and payload length. Prefer INET creation-time and identity tags plus source/sink signals if they preserve all required information. Add small application-owned source/measurement modules where necessary, but do not introduce a per-flow traffic stop: periodic/burst generation continues until simulation end. Measurement tags must not silently increase simulated payload size.
 
 INET already exposes sink `packetLifeTime`, `packetJitter` and related statistics, queue statistics and CBS credits. Verify their semantics against the chosen application boundary. Built-in scalars alone do not provide the required generated-packet cohort and missing/deadline accounting.
 
-Define the measurement cohort by **generation time**, `warmup <= t_gen < traffic_stop`. Continue the simulation after sources stop so measured packets can arrive and deadlines can expire. Ignore earlier generated packets for cohort metrics even if they arrive after warm-up. Record source attempts separately if a traffic source can be throttled by backpressure.
+Define the measurement cohort by **generation time**, `warmup <= t_gen < simulation_end`. Do not add a separate source stop/drain interval. Report packets still in transit at the horizon as missing and exclude unmatured deadlines from deadline-miss comparisons. Ignore earlier generated packets for cohort metrics even if they arrive after warm-up. Record source attempts separately if a traffic source can be throttled by backpressure.
 
 | Measurement | Definition and presentation |
 | --- | --- |
@@ -264,7 +264,7 @@ Define the measurement cohort by **generation time**, `warmup <= t_gen < traffic
 | Port utilization | Defined busy time or wire occupancy divided by observation time, with the accounting convention recorded. |
 | Evaluation cost | Wall/CPU time, event count, termination status, extraction time and cache status. Needed for later algorithm comparisons. |
 
-Report metrics with units, sample counts and unavailable values. An empty sink must show zero deliveries and unavailable latency, never zero latency. A censored or failed run is not a feasible solution. Where the observation horizon cannot establish true physical loss, expose `missing_at_horizon_ratio` and the horizon alongside confirmed-drop metrics.
+Report metrics with units, sample counts and unavailable values. An empty sink must show zero deliveries and unavailable latency, never zero latency. A failed or incomplete run is not a feasible solution; packets with deadlines beyond a completed observation horizon are reported separately. Where the observation horizon cannot establish true physical loss, expose `missing_at_horizon_ratio` and the horizon alongside confirmed-drop metrics.
 
 Provide two recording profiles. **Inspection** retains selected packet, queue and credit traces. **Evaluation** records the samples or sufficient summaries needed for the same metric definitions while disabling unrelated high-volume vectors. Validate that summaries agree on a small case before using evaluation mode. Compute percentiles from actual samples or an explicitly documented approximation, not from a mean scalar.
 
@@ -321,7 +321,7 @@ Provide these reviewed examples before a large random-network generator:
 
 Change one factor at a time initially. Save actual counts of switches, flows, classes, selected variables, hops, and per-port load; switch count alone is not network complexity. Do not claim that increased hop count must always increase every observed statistic under different traffic conditions.
 
-For generated families, use deterministic acyclic graph templates and saved seeds. Freeze the realized network and flows before optimization. A full factorial campaign and optimizer selection belong to later methodology phases.
+For generated families, use deterministic graph templates and saved seeds, including physical cycles with validated static forwarding. The research template generator freezes topology, cable lengths, clock drift, traffic phases, payloads and burst settings into editable scenario JSON. Freeze the realized network and flows before optimization. A full factorial campaign and optimizer selection belong to later methodology phases.
 
 ## 15. Implementation sequence and acceptance criteria
 
@@ -329,7 +329,7 @@ For generated families, use deterministic acyclic graph templates and saved seed
 | --- | --- | --- |
 | 0. Environment and reference | Verified `opp_env` launch profile, INET library/NED discovery, tiny hand-authored CBS/VLAN scenario. | Reference completes in Cmdenv without a desktop display or simulation window; record exact commands and effective build mode. |
 | 1. Shared scenario compiler | Typed schema, validation, stable port/app mapping, JSON example, CLI generation, complete NED/INI bundle. | A generated single-switch scenario loads and exchanges tagged traffic in INET; files are deterministic and invalid VLAN/class mappings are rejected. |
-| 2. Measurement foundation | Packet attribution, source stop/drain policy, extraction and versioned metrics contract. | Independent tiny cases establish delay boundary, jitter, loss/missing distinction, deadlines and zero-delivery behavior. |
+| 2. Measurement foundation | Packet attribution, continuous generation and horizon censoring, extraction and versioned metrics contract. | Independent tiny cases establish delay boundary, jitter, loss/missing distinction, deadlines and zero-delivery behavior. |
 | 3. Web editor and preview | Topology canvas, node/link inspector, traffic table, ingress/egress forms, source-linked diagnostics and export. | Save/reopen and import/export the single-switch and line scenarios without semantic changes; the GUI calls milestone 1's compiler. |
 | 4. Browser-managed execution | Job API, worker, SSE logs, cancellation, isolated runs and Cmdenv launch action. | Launch, complete and inspect a real run from the browser without opening a simulation window; cancel another; recover state after restart; copy a reproducible terminal command. |
 | 5. Results and research scenarios | Flow table, distributions, queue/CBS plots, comparisons, reviewed line/tree/bottleneck families. | Multi-hop flows traverse the intended VLAN-permitted paths; results map to their correct flow/queue and repeated-seed runs preserve fixed scenarios. |

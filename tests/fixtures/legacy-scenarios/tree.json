@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "name": "4-switch CBS bottleneck",
+  "name": "Branched CBS bottleneck",
   "nodes": [
     {
       "id": "talker",
@@ -37,8 +37,8 @@
           ]
         }
       ],
-      "x": 20.0,
-      "y": 120.0
+      "x": 30.0,
+      "y": 50.0
     },
     {
       "id": "background",
@@ -75,8 +75,8 @@
           ]
         }
       ],
-      "x": 20.0,
-      "y": 300.0
+      "x": 30.0,
+      "y": 320.0
     },
     {
       "id": "listener",
@@ -113,11 +113,147 @@
           ]
         }
       ],
-      "x": 1060.0,
-      "y": 170.0
+      "x": 650.0,
+      "y": 180.0
     },
     {
-      "id": "sw0",
+      "id": "swLeft",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": true
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": true
+            }
+          ]
+        }
+      ],
+      "x": 220.0,
+      "y": 50.0
+    },
+    {
+      "id": "swRight",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": true
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": true
+            }
+          ]
+        }
+      ],
+      "x": 220.0,
+      "y": 320.0
+    },
+    {
+      "id": "swRoot",
       "kind": "switch",
       "ports": [
         {
@@ -211,292 +347,75 @@
           ]
         }
       ],
-      "x": 220.0,
-      "y": 170.0
-    },
-    {
-      "id": "sw1",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 410.0,
-      "y": 170.0
-    },
-    {
-      "id": "sw2",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 600.0,
-      "y": 170.0
-    },
-    {
-      "id": "sw3",
-      "kind": "switch",
-      "ports": [
-        {
-          "index": 0,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        },
-        {
-          "index": 1,
-          "vlans": [
-            10
-          ],
-          "pcp_map": [
-            0,
-            0,
-            0,
-            0,
-            1,
-            1,
-            1,
-            1
-          ],
-          "queues": [
-            {
-              "shaper": "sp",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": false
-            },
-            {
-              "shaper": "cbs",
-              "capacity": 100,
-              "idle_slope": 20000000.0,
-              "optimize": true
-            }
-          ]
-        }
-      ],
-      "x": 790.0,
-      "y": 170.0
+      "x": 440.0,
+      "y": 180.0
     }
   ],
   "links": [
     {
-      "id": "accessA",
+      "id": "link0",
       "a": {
         "node": "talker",
         "port": 0
       },
       "b": {
-        "node": "sw0",
+        "node": "swLeft",
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
-      "id": "accessB",
+      "id": "link1",
       "a": {
         "node": "background",
         "port": 0
       },
       "b": {
-        "node": "sw0",
+        "node": "swRight",
+        "port": 0
+      },
+      "bitrate": 100000000.0,
+      "delay": 1e-06
+    },
+    {
+      "id": "link2",
+      "a": {
+        "node": "swLeft",
+        "port": 1
+      },
+      "b": {
+        "node": "swRoot",
+        "port": 0
+      },
+      "bitrate": 100000000.0,
+      "delay": 1e-06
+    },
+    {
+      "id": "link3",
+      "a": {
+        "node": "swRight",
+        "port": 1
+      },
+      "b": {
+        "node": "swRoot",
         "port": 1
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     },
     {
-      "id": "trunk0",
+      "id": "link4",
       "a": {
-        "node": "sw0",
+        "node": "swRoot",
         "port": 2
-      },
-      "b": {
-        "node": "sw1",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "trunk1",
-      "a": {
-        "node": "sw1",
-        "port": 1
-      },
-      "b": {
-        "node": "sw2",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "trunk2",
-      "a": {
-        "node": "sw2",
-        "port": 1
-      },
-      "b": {
-        "node": "sw3",
-        "port": 0
-      },
-      "bitrate": 100000000.0,
-      "delay": 1e-6
-    },
-    {
-      "id": "listenerLink",
-      "a": {
-        "node": "sw3",
-        "port": 1
       },
       "b": {
         "node": "listener",
         "port": 0
       },
       "bitrate": 100000000.0,
-      "delay": 1e-6
+      "delay": 1e-06
     }
   ],
   "flows": [
@@ -507,7 +426,6 @@
       "payload": 1000,
       "interval": 0.001,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 4,
       "deadline": 0.01
@@ -519,7 +437,6 @@
       "payload": 1000,
       "interval": 0.0002,
       "start": 0.0,
-      "stop": 1.0,
       "vlan": 10,
       "pcp": 0,
       "deadline": 0.01

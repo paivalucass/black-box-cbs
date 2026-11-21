@@ -1,0 +1,4111 @@
+{
+  "schema_version": 2,
+  "ned_name": "AutomotiveSample",
+  "name": "Automotive sample · native INET",
+  "nodes": [
+    {
+      "id": "SW_Core",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "higher_queue_index_first": true,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 300000000.0,
+              "optimize": true
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "higher_queue_index_first": true,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": true
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": true
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 632.0,
+      "y": 552.0
+    },
+    {
+      "id": "SW_ADAS",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "higher_queue_index_first": true,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            3
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 100000000.0,
+              "optimize": true
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 929.0,
+      "y": 552.0
+    },
+    {
+      "id": "SW_Front",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 780.0,
+      "y": 809.0
+    },
+    {
+      "id": "SW_Rear",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 484.0,
+      "y": 809.0
+    },
+    {
+      "id": "SW_Cabin",
+      "kind": "switch",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "higher_queue_index_first": true,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "class_to_queue": [
+            0,
+            1
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 400000000.0,
+              "optimize": true
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 335.0,
+      "y": 552.0
+    },
+    {
+      "id": "ADAS_HPC",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 1226.0,
+      "y": 552.0
+    },
+    {
+      "id": "FrontCam",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 15.0,
+      "x": 1077.0,
+      "y": 809.0
+    },
+    {
+      "id": "SurroundCam",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": -10.0,
+      "x": 780.0,
+      "y": 295.0
+    },
+    {
+      "id": "Lidar",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 8.0,
+      "x": 1077.0,
+      "y": 295.0
+    },
+    {
+      "id": "Radar",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 929.0,
+      "y": 1066.0
+    },
+    {
+      "id": "BrakeCtrl",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 20.0,
+      "x": 632.0,
+      "y": 1066.0
+    },
+    {
+      "id": "SteeringCtrl",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": -20.0,
+      "x": 1292.0,
+      "y": 944.0
+    },
+    {
+      "id": "Powertrain",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 5.0,
+      "x": 335.0,
+      "y": 1066.0
+    },
+    {
+      "id": "RearCam",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 187.0,
+      "y": 809.0
+    },
+    {
+      "id": "BodyCtrl",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 618.0,
+      "y": 1320.0
+    },
+    {
+      "id": "HeadUnit",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 38.0,
+      "y": 552.0
+    },
+    {
+      "id": "Cluster",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 10.0,
+      "x": 187.0,
+      "y": 295.0
+    },
+    {
+      "id": "Telematics",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 484.0,
+      "y": 295.0
+    },
+    {
+      "id": "Central_HPC",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": true,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "cbs",
+              "capacity": 100,
+              "idle_slope": 300000000.0,
+              "optimize": true
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 497.0,
+      "y": 41.0
+    },
+    {
+      "id": "Logger",
+      "kind": "device",
+      "ports": [
+        {
+          "index": 0,
+          "higher_queue_index_first": false,
+          "vlans": [
+            10
+          ],
+          "pcp_map": [
+            7,
+            6,
+            5,
+            4,
+            3,
+            2,
+            1,
+            0
+          ],
+          "class_to_queue": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "queues": [
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            },
+            {
+              "shaper": "sp",
+              "capacity": 100,
+              "idle_slope": 20000000.0,
+              "optimize": false
+            }
+          ]
+        }
+      ],
+      "clock_drift_ppm": 0.0,
+      "x": 767.0,
+      "y": 41.0
+    }
+  ],
+  "links": [
+    {
+      "id": "link0",
+      "a": {
+        "node": "SW_Core",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_ADAS",
+        "port": 0
+      },
+      "bitrate": 10000000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link1",
+      "a": {
+        "node": "SW_Core",
+        "port": 1
+      },
+      "b": {
+        "node": "SW_Front",
+        "port": 0
+      },
+      "bitrate": 1000000000.0,
+      "delay": 2e-08
+    },
+    {
+      "id": "link2",
+      "a": {
+        "node": "SW_Core",
+        "port": 2
+      },
+      "b": {
+        "node": "SW_Rear",
+        "port": 0
+      },
+      "bitrate": 1000000000.0,
+      "delay": 3.0000000000000004e-08
+    },
+    {
+      "id": "link3",
+      "a": {
+        "node": "SW_Core",
+        "port": 3
+      },
+      "b": {
+        "node": "SW_Cabin",
+        "port": 0
+      },
+      "bitrate": 1000000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link4",
+      "a": {
+        "node": "SW_Front",
+        "port": 1
+      },
+      "b": {
+        "node": "SW_Rear",
+        "port": 1
+      },
+      "bitrate": 1000000000.0,
+      "delay": 4e-08
+    },
+    {
+      "id": "link5",
+      "a": {
+        "node": "SW_Front",
+        "port": 2
+      },
+      "b": {
+        "node": "SW_ADAS",
+        "port": 1
+      },
+      "bitrate": 1000000000.0,
+      "delay": 1e-08
+    },
+    {
+      "id": "link6",
+      "a": {
+        "node": "ADAS_HPC",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_ADAS",
+        "port": 2
+      },
+      "bitrate": 10000000000.0,
+      "delay": 5e-09
+    },
+    {
+      "id": "link7",
+      "a": {
+        "node": "FrontCam",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_ADAS",
+        "port": 3
+      },
+      "bitrate": 1000000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link8",
+      "a": {
+        "node": "SurroundCam",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_ADAS",
+        "port": 4
+      },
+      "bitrate": 1000000000.0,
+      "delay": 2e-08
+    },
+    {
+      "id": "link9",
+      "a": {
+        "node": "Lidar",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_ADAS",
+        "port": 5
+      },
+      "bitrate": 1000000000.0,
+      "delay": 1e-08
+    },
+    {
+      "id": "link10",
+      "a": {
+        "node": "Radar",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Front",
+        "port": 3
+      },
+      "bitrate": 100000000.0,
+      "delay": 1e-08
+    },
+    {
+      "id": "link11",
+      "a": {
+        "node": "BrakeCtrl",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Front",
+        "port": 4
+      },
+      "bitrate": 100000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link12",
+      "a": {
+        "node": "SteeringCtrl",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Front",
+        "port": 5
+      },
+      "bitrate": 100000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link13",
+      "a": {
+        "node": "Powertrain",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Rear",
+        "port": 2
+      },
+      "bitrate": 100000000.0,
+      "delay": 1e-08
+    },
+    {
+      "id": "link14",
+      "a": {
+        "node": "RearCam",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Rear",
+        "port": 3
+      },
+      "bitrate": 100000000.0,
+      "delay": 2e-08
+    },
+    {
+      "id": "link15",
+      "a": {
+        "node": "BodyCtrl",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Rear",
+        "port": 4
+      },
+      "bitrate": 100000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link16",
+      "a": {
+        "node": "HeadUnit",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Cabin",
+        "port": 1
+      },
+      "bitrate": 1000000000.0,
+      "delay": 1e-08
+    },
+    {
+      "id": "link17",
+      "a": {
+        "node": "Cluster",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Cabin",
+        "port": 2
+      },
+      "bitrate": 100000000.0,
+      "delay": 1e-08
+    },
+    {
+      "id": "link18",
+      "a": {
+        "node": "Telematics",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Cabin",
+        "port": 3
+      },
+      "bitrate": 100000000.0,
+      "delay": 1.5000000000000002e-08
+    },
+    {
+      "id": "link19",
+      "a": {
+        "node": "Central_HPC",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Core",
+        "port": 4
+      },
+      "bitrate": 10000000000.0,
+      "delay": 5e-09
+    },
+    {
+      "id": "link20",
+      "a": {
+        "node": "Logger",
+        "port": 0
+      },
+      "b": {
+        "node": "SW_Core",
+        "port": 5
+      },
+      "bitrate": 1000000000.0,
+      "delay": 5e-09
+    }
+  ],
+  "flows": [
+    {
+      "id": "ADAS_Objects",
+      "source": "ADAS_HPC",
+      "destination": "",
+      "receivers": [
+        "Central_HPC",
+        "Logger"
+      ],
+      "multicast_mac": "01:00:00:00:00:01",
+      "routes": {
+        "Central_HPC": [
+          "ADAS_HPC",
+          "SW_ADAS",
+          "SW_Core",
+          "Central_HPC"
+        ],
+        "Logger": [
+          "ADAS_HPC",
+          "SW_ADAS",
+          "SW_Core",
+          "Logger"
+        ]
+      },
+      "payload": 600,
+      "interval": 0.02,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 6,
+      "deadline": 0.01
+    },
+    {
+      "id": "ADAS_Cmd_Brake",
+      "source": "ADAS_HPC",
+      "destination": "",
+      "receivers": [
+        "BrakeCtrl"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "BrakeCtrl": [
+          "ADAS_HPC",
+          "SW_ADAS",
+          "SW_Front",
+          "BrakeCtrl"
+        ]
+      },
+      "payload": 64,
+      "interval": 0.005,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0002,
+      "vlan": 10,
+      "pcp": 7,
+      "deadline": 0.01
+    },
+    {
+      "id": "ADAS_Cmd_Steer",
+      "source": "ADAS_HPC",
+      "destination": "",
+      "receivers": [
+        "SteeringCtrl"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "SteeringCtrl": [
+          "ADAS_HPC",
+          "SW_ADAS",
+          "SW_Front",
+          "SteeringCtrl"
+        ]
+      },
+      "payload": 64,
+      "interval": 0.005,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0004,
+      "vlan": 10,
+      "pcp": 7,
+      "deadline": 0.01
+    },
+    {
+      "id": "FrontCam_Video",
+      "source": "FrontCam",
+      "destination": "",
+      "receivers": [
+        "ADAS_HPC"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "ADAS_HPC": [
+          "FrontCam",
+          "SW_ADAS",
+          "ADAS_HPC"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.001,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 5,
+      "deadline": 0.01
+    },
+    {
+      "id": "SurroundCam_Video",
+      "source": "SurroundCam",
+      "destination": "",
+      "receivers": [
+        "ADAS_HPC"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "ADAS_HPC": [
+          "SurroundCam",
+          "SW_ADAS",
+          "ADAS_HPC"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.002,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.002,
+      "vlan": 10,
+      "pcp": 5,
+      "deadline": 0.01
+    },
+    {
+      "id": "Lidar_Points",
+      "source": "Lidar",
+      "destination": "",
+      "receivers": [
+        "ADAS_HPC"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "ADAS_HPC": [
+          "Lidar",
+          "SW_ADAS",
+          "ADAS_HPC"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.001,
+      "sending_mode": "burst",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.004,
+      "vlan": 10,
+      "pcp": 4,
+      "deadline": 0.01
+    },
+    {
+      "id": "Radar_Targets",
+      "source": "Radar",
+      "destination": "",
+      "receivers": [
+        "ADAS_HPC"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "ADAS_HPC": [
+          "Radar",
+          "SW_Front",
+          "SW_ADAS",
+          "ADAS_HPC"
+        ]
+      },
+      "payload": 400,
+      "interval": 0.005,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.001,
+      "vlan": 10,
+      "pcp": 6,
+      "deadline": 0.01
+    },
+    {
+      "id": "Brake_State",
+      "source": "BrakeCtrl",
+      "destination": "",
+      "receivers": [
+        "ADAS_HPC",
+        "Central_HPC"
+      ],
+      "multicast_mac": "01:00:00:00:00:02",
+      "routes": {
+        "ADAS_HPC": [
+          "BrakeCtrl",
+          "SW_Front",
+          "SW_ADAS",
+          "ADAS_HPC"
+        ],
+        "Central_HPC": [
+          "BrakeCtrl",
+          "SW_Front",
+          "SW_Core",
+          "Central_HPC"
+        ]
+      },
+      "payload": 100,
+      "interval": 0.005,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 7,
+      "deadline": 0.01
+    },
+    {
+      "id": "Steer_State",
+      "source": "SteeringCtrl",
+      "destination": "",
+      "receivers": [
+        "ADAS_HPC",
+        "Central_HPC"
+      ],
+      "multicast_mac": "01:00:00:00:00:03",
+      "routes": {
+        "ADAS_HPC": [
+          "SteeringCtrl",
+          "SW_Front",
+          "SW_ADAS",
+          "ADAS_HPC"
+        ],
+        "Central_HPC": [
+          "SteeringCtrl",
+          "SW_Front",
+          "SW_Core",
+          "Central_HPC"
+        ]
+      },
+      "payload": 100,
+      "interval": 0.005,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.002,
+      "vlan": 10,
+      "pcp": 7,
+      "deadline": 0.01
+    },
+    {
+      "id": "Powertrain_State",
+      "source": "Powertrain",
+      "destination": "",
+      "receivers": [
+        "Central_HPC",
+        "Cluster"
+      ],
+      "multicast_mac": "01:00:00:00:00:04",
+      "routes": {
+        "Central_HPC": [
+          "Powertrain",
+          "SW_Rear",
+          "SW_Core",
+          "Central_HPC"
+        ],
+        "Cluster": [
+          "Powertrain",
+          "SW_Rear",
+          "SW_Core",
+          "SW_Cabin",
+          "Cluster"
+        ]
+      },
+      "payload": 200,
+      "interval": 0.01,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 6,
+      "deadline": 0.01
+    },
+    {
+      "id": "RearCam_Video",
+      "source": "RearCam",
+      "destination": "",
+      "receivers": [
+        "HeadUnit"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "HeadUnit": [
+          "RearCam",
+          "SW_Rear",
+          "SW_Core",
+          "SW_Cabin",
+          "HeadUnit"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.01,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.006,
+      "vlan": 10,
+      "pcp": 4,
+      "deadline": 0.01
+    },
+    {
+      "id": "Body_Status",
+      "source": "BodyCtrl",
+      "destination": "",
+      "receivers": [
+        "Central_HPC"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "Central_HPC": [
+          "BodyCtrl",
+          "SW_Rear",
+          "SW_Front",
+          "SW_Core",
+          "Central_HPC"
+        ]
+      },
+      "payload": 150,
+      "interval": 0.05,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.002,
+      "vlan": 10,
+      "pcp": 3,
+      "deadline": 0.01
+    },
+    {
+      "id": "Telematics_Up",
+      "source": "Telematics",
+      "destination": "",
+      "receivers": [
+        "Central_HPC"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "Central_HPC": [
+          "Telematics",
+          "SW_Cabin",
+          "SW_Core",
+          "Central_HPC"
+        ]
+      },
+      "payload": 1000,
+      "interval": 0.1,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.01,
+      "vlan": 10,
+      "pcp": 2,
+      "deadline": 0.01
+    },
+    {
+      "id": "HeadUnit_Stream",
+      "source": "Central_HPC",
+      "destination": "",
+      "receivers": [
+        "HeadUnit"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "HeadUnit": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Cabin",
+          "HeadUnit"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.002,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 4,
+      "deadline": 0.01
+    },
+    {
+      "id": "Cluster_Data",
+      "source": "Central_HPC",
+      "destination": "",
+      "receivers": [
+        "Cluster"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "Cluster": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Cabin",
+          "Cluster"
+        ]
+      },
+      "payload": 400,
+      "interval": 0.01,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 5,
+      "deadline": 0.01
+    },
+    {
+      "id": "Telematics_Down",
+      "source": "Central_HPC",
+      "destination": "",
+      "receivers": [
+        "Telematics"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "Telematics": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Cabin",
+          "Telematics"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.001,
+      "sending_mode": "burst",
+      "burst_size": 4,
+      "burst_period": 0.2,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 1,
+      "deadline": 0.01
+    },
+    {
+      "id": "Log_Stream",
+      "source": "Central_HPC",
+      "destination": "",
+      "receivers": [
+        "Logger"
+      ],
+      "multicast_mac": null,
+      "routes": {
+        "Logger": [
+          "Central_HPC",
+          "SW_Core",
+          "Logger"
+        ]
+      },
+      "payload": 1400,
+      "interval": 0.001,
+      "sending_mode": "burst",
+      "burst_size": 10,
+      "burst_period": 0.05,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 0,
+      "deadline": 0.01
+    },
+    {
+      "id": "Time_Sync",
+      "source": "Central_HPC",
+      "destination": "",
+      "receivers": [
+        "BodyCtrl",
+        "BrakeCtrl",
+        "Cluster",
+        "Powertrain",
+        "Radar",
+        "SteeringCtrl"
+      ],
+      "multicast_mac": "01:00:00:00:00:05",
+      "routes": {
+        "BodyCtrl": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Rear",
+          "BodyCtrl"
+        ],
+        "BrakeCtrl": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Front",
+          "BrakeCtrl"
+        ],
+        "Cluster": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Cabin",
+          "Cluster"
+        ],
+        "Powertrain": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Rear",
+          "Powertrain"
+        ],
+        "Radar": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Front",
+          "Radar"
+        ],
+        "SteeringCtrl": [
+          "Central_HPC",
+          "SW_Core",
+          "SW_Front",
+          "SteeringCtrl"
+        ]
+      },
+      "payload": 80,
+      "interval": 0.125,
+      "sending_mode": "periodic",
+      "burst_size": 10,
+      "burst_period": 0.01,
+      "clock_drift_ppm": 0.0,
+      "start": 0.0,
+      "vlan": 10,
+      "pcp": 7,
+      "deadline": 0.01
+    }
+  ],
+  "experiment": {
+    "duration": 1.1,
+    "warmup": 0.0,
+    "seed": 1
+  }
+}

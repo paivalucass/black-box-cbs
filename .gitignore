@@ -77,3 +77,6 @@ web/dist/
 __pycache__/
 .pytest_cache/
 *.pyc
+
+# Optional downloaded ECharts distribution (npm run charts:install)
+web/public/vendor/echarts.min.js
